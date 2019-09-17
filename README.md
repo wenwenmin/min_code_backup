@@ -8,6 +8,10 @@ https://github.com/minwenwen1988/wenwen_bio_scripts
 Step2: 单击creat new file
 Step3: 然后输入->myFile/reame
 
+3 如何编写一个漂亮的REAME文件
+请参考下面链接
+https://github.com/wenwenmin/LibADMM/edit/master/README.md
+
 #  二、生物分析的小工具
 1: 富集分析
 做生物信息经常要做富集分析，我写了一个程序可以自动对多个基因集合做富集分析
