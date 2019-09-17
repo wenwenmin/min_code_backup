@@ -5,11 +5,19 @@
 
 - 第二步：读入数据
 
-### R code
-HGNC_geneNames = read.csv("C:/Users/linjh/Desktop/AGSVD/my_code_Exp_scRNA/HGNC_geneNames.txt",sep="\t", header=F)
-HGNC_geneNames = HGNC_geneNames[,c(1,4)]
-names(HGNC_geneNames) = c("approved.symbol","NCBI.EntrezID")
+- 映射不同的基因name，注意有很多基因名称发生了变化。一个基因可能先前有多个基因名称。
 
-HGNC_geneNames$approved.symbol=as.character(HGNC_geneNames$approved.symbol)
-HGNC_geneNames$NCBI.EntrezID=as.character(HGNC_geneNames$NCBI.EntrezID)
-save(HGNC_geneNames, file = "HGNC_geneNames.RData")
+### R code
+HGNC_geneNames = read.csv("C:/Users/linjh/Desktop/AGSVD/my_code_Exp_scRNA/HGNC_geneNames.txt",sep="\t", header=F) 
+
+HGNC_geneNames = HGNC_geneNames[,c(1,2, 4)] 
+
+names(HGNC_geneNames) = c("approved.symbol","previous.symbols", "NCBI.EntrezID")
+
+HGNC_geneNames$approved.symbol=as.character(HGNC_geneNames$approved.symbol) 
+
+HGNC_geneNames$previous.symbols=as.character(HGNC_geneNames$previous.symbols) 
+
+HGNC_geneNames$NCBI.EntrezID=as.character(HGNC_geneNames$NCBI.EntrezID) 
+
+save(HGNC_geneNames, file = "C:/Users/linjh/Desktop/AGSVD/my_code_Exp_scRNA/HGNC_geneNames.RData")
