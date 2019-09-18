@@ -1,5 +1,5 @@
-library(openxlsx)
-
+library(openxlsx) 
+# 参考网站 https://www.jianshu.com/p/78ada01a3b65
 write.xlsx(iris, file = "writeXLSX3.xlsx", colNames = TRUE, sheetName ="AAA")
 ###############################################################################
 ###############################################################################
