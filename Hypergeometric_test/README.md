@@ -11,8 +11,8 @@ We define the parameters of the hypergeometric test in the following way:
 
 g <- 75 ## Number of submitted genes
 
-k <- 59 ## Size of the selection, i.e. submitted genes with at least one annotation in GO biological processes
-        (就是这75个基因与GOBP所有基因的交集合)
+k <- 59 ## (就是这75个基因与GOBP所有基因的交集合) Size of the selection, i.e. submitted genes with at least one annotation in GO biological processes
+        
 m <- 611 ## Number of "marked" elements, i.e. genes associated to this biological process
 
 N <- 13588 ## Total number of genes with some annotation in GOTERM_BP_FAT.  
