@@ -1,5 +1,15 @@
 https://dputhier.github.io/ASG/practicals/go_statistics_td/go_statistics_td_2015.html
 
+g <- 75 ## Number of submitted genes
+k <- 59 ## Size of the selection, i.e. submitted genes with at least one annotation in GO biological processes
+m <- 611 ## Number of "marked" elements, i.e. genes associated to this biological process
+N <- 13588 ## Total number of genes with some annotation in GOTERM_BP_FAT.  
+n <- N - m ## Number of "non-marked" elements, i.e. genes not associated to this biological process
+x <- 19 ## Number of "marked" elements in the selection, i.e. genes of the group of interest that are associated to this biological process
+p.value <-  phyper(q=x -1, m=m, n=n, k=k, lower.tail=FALSE)
+
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
 Statistics for Bioinformatics - Practicals - Gene enrichment statistics
 Denis Puthier & Jacques van Helden
 2 Nov 2015
