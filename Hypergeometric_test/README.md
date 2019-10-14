@@ -1,5 +1,12 @@
 https://dputhier.github.io/ASG/practicals/go_statistics_td/go_statistics_td_2015.html
 
+Hypergeometric test
+In a first time, we model the association between genes and GO class using a hypergeometric distribution. The classical example for the hypergeometric is the ranomd selection of “k” balls in an urn containing “m” marked and “n” non-marked balls, and the observation that the selection contains “x” marked ball.
+
+To illustrate the way to perform the hypergeometric test, we will re-analyze the second row of the David result displayed above: correspondence between a set of predicted E2F target genes and the genes annotated in the functional class “cell cycle” of the GOTERM_BP_FAT terms.
+
+We define the parameters of the hypergeometric test in the following way:
+
 g <- 75 ## Number of submitted genes
 
 k <- 59 ## Size of the selection, i.e. submitted genes with at least one annotation in GO biological processes
