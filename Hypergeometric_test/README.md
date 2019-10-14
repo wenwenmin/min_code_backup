@@ -24,7 +24,7 @@ x <- 19 ## Number of "marked" elements in the selection, i.e. genes of the group
 p.value <-  phyper(q=x -1, m=m, n=n, k=k, lower.tail=FALSE)
 
 ## 画超几何的密度图
-# plotDistr 可以画常见分布的各种图
+### plotDistr 可以画常见分布的各种图
 library("RcmdrMisc") # Various statistical, graphics
 k <- 59 ## Size of the selection, i.e. submitted genes with at least one annotation in GO biological processes
 m <- 611 ## Number of "marked" elements, i.e. genes associated to this biological process
