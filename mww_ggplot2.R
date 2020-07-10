@@ -2,7 +2,32 @@
 packages <- c("ggplot2", "dplyr", "gapminder")
 # Load packages
 lapply(packages, library, character.only = TRUE)
+**********************************************************************
+## 0 ggplot2的主题设置
+mytheme = theme(axis.line=element_line(size=rel(1.2),colour="white"),
+                axis.ticks=element_line(size=rel(1.2)),
+                plot.title = element_text(hjust = 0.5),
+                axis.title = element_text(size = rel(1.2)),
+                axis.text = element_text(colour = "gray50",size=rel(1)),
+                legend.title =element_text(size=1, colour="white"),
+                legend.text=element_text(size=rel(1.3), colour="black"))
+# 说明
+  theme(axis.text = element_text(colour = "red", size = rel(1.5)))+
+  theme(axis.title.x = element_text(size = rel(2))) + 
+  theme(axis.title.y = element_text(size = rel(2))) +
+  # X和Y轴的线设置
+  theme(axis.line  = element_line(size = rel(2),colour = "red")) +
+  # 坐标轴上的小线设置
+  theme(axis.ticks = element_line(size = 2,colour = "blue"))+
+  theme(legend.position = "none")
+
+# 多图怎么摆放？
 library(ggpubr)
+ggarrange(p1, p2, p3, labels = c("A", "B", "C"), ncol = 1, nrow = 3)
+
+# 保存图片
+ggsave("Fun14_figs.png", width = 4, height = 4, units = "in")
+**********************************************************************
 **********************************************************************
 ## 1 画散点图的案例 (2020-7-10)
 dat = data.frame(para_c=cs, no_zero_num = num)
@@ -81,7 +106,8 @@ p1 = p1 + geom_bar(stat="identity",width=0.7) + theme_classic()
 p1 = p1 + scale_y_continuous(expand = c(0, 0))
 # x和y轴对调
 p1 = p1 + coord_flip()
-p1 = p1 + theme(axis.text = element_text(colour = "red", size = rel(1.5)))+
+p1 = p1 + 
+  theme(axis.text = element_text(colour = "red", size = rel(1.5)))+
   theme(axis.title.x = element_text(size = rel(2))) + 
   theme(axis.title.y = element_text(size = rel(2))) +
   # X和Y轴的线设置
