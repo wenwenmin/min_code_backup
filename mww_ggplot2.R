@@ -4,6 +4,8 @@ packages <- c("ggplot2", "dplyr", "gapminder")
 lapply(packages, library, character.only = TRUE)
 library(ggpubr)
 
+# ggplot(dat1, aes(x=iter, y=obj)) + geom_line(colour = "black") + geom_point(shape = 21, colour = "black", fill = "gray", size = 1) + 
+  labs(title = "Module 1", x = "iteration ", y = "Obj") + mytheme 
 
 get_modularity_bar_fig = function(modularity_dat){
   # ggaplot画图的基本框架，先确定画图的X轴和Y轴分别是什么变量
