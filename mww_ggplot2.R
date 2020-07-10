@@ -4,6 +4,25 @@ packages <- c("ggplot2", "dplyr", "gapminder")
 lapply(packages, library, character.only = TRUE)
 library(ggpubr)
 
+
+get_modularity_bar_fig = function(modularity_dat){
+  # ggaplot画图的基本框架，先确定画图的X轴和Y轴分别是什么变量
+  fig = ggplot(modularity_dat, mapping=aes(x=cancer,modulariy)) + theme_classic() + xlab(NULL)+
+    # 柱状图；aes(fill = method)两种柱关于method设定不同类型；position ="dodge"两个柱并排放
+    geom_bar(stat="identity",width=0.9, aes(fill=method), position ="dodge") + 
+    #柱状图的两个颜色的设定；expand=c(0,0)使得图和x轴的距离gap为零
+    scale_fill_manual(values = c("blue", "gray")) + scale_y_continuous(expand = c(0, 0))+ 
+    # X和Y轴的线设置；坐标轴上的小线设置
+    theme(axis.line=element_line(size=rel(2)),axis.ticks=element_line(size=rel(2)),
+          axis.title = element_text(size = rel(1.3)),
+          axis.text = element_text(colour = "black",size=rel(1.2)),
+          axis.text.x = element_text(angle = 60, hjust = 1),
+          legend.position = c(.8, .9),
+          legend.title =element_text(size=1, colour="white"), 
+          legend.text=element_text(size=rel(1.3), colour="black")) 
+  return(fig)
+}
+
 ######################################################################
 ######################################################################
 # 例1：bar图的第一个例子---画GOBP的富集分析
