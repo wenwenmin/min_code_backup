@@ -19,7 +19,11 @@ get_modularity_bar_fig = function(modularity_dat){
           axis.text.x = element_text(angle = 60, hjust = 1),
           legend.position = c(.8, .9),
           legend.title =element_text(size=1, colour="white"), 
-          legend.text=element_text(size=rel(1.3), colour="black")) 
+          legend.text=element_text(size=rel(1.3), colour="black"))  +
+    labs(size= "Nitrogen",
+       x = "My x label",
+       y = "My y label",
+       title = "Weighted Scatterplot of Watershed Area vs. Discharge and Nitrogen Levels (PPM)")
   return(fig)
 }
 
