@@ -3,10 +3,25 @@ packages <- c("ggplot2", "dplyr", "gapminder")
 # Load packages
 lapply(packages, library, character.only = TRUE)
 library(ggpubr)
+**********************************************************************
+## 1 画散点图的案例 (2020-7-10)
+dat = data.frame(para_c=cs, no_zero_num = num)
+mytheme = theme(axis.line=element_line(size=rel(1.2),colour="white"),
+                axis.ticks=element_line(size=rel(1.2)),
+                plot.title = element_text(hjust = 0.5),
+                axis.title = element_text(size = rel(1.1)),
+                axis.text = element_text(colour = "gray50",size=rel(1.1)),
+                legend.title =element_text(size=1, colour="white"),
+                legend.text=element_text(size=rel(1.3), colour="black"))
 
-# ggplot(dat1, aes(x=iter, y=obj)) + geom_line(colour = "black") + geom_point(shape = 21, colour = "black", fill = "gray", size = 1) + 
-  labs(title = "Module 1", x = "iteration ", y = "Obj") + mytheme 
+p1 = ggplot(dat, aes(x=para_c, y=no_zero_num)) + 
+  geom_point(shape = 1, size = 1.5) +
+  labs(title = "L1L2_Proj", x = "c0 ", y = "number of nozero") + mytheme
+**********************************************************************
 
+
+######################################################################
+######################################################################
 get_modularity_bar_fig = function(modularity_dat){
   # ggaplot画图的基本框架，先确定画图的X轴和Y轴分别是什么变量
   fig = ggplot(modularity_dat, mapping=aes(x=cancer,modulariy)) + theme_classic() + xlab(NULL)+
@@ -28,7 +43,8 @@ get_modularity_bar_fig = function(modularity_dat){
        title = "Weighted Scatterplot of Watershed Area vs. Discharge and Nitrogen Levels (PPM)")
   return(fig)
 }
-
+######################################################################
+######################################################################
 getEnrichmentBar = function(df,mycolor="green"){
   ###可预先设定因子(展示在X的上的名称)的排序，否则它会按照字母排序
   ###一般R语言会默认安装字母排序展示在图中，而有时候不是我们想要的
@@ -54,7 +70,6 @@ getEnrichmentBar = function(df,mycolor="green"){
   # xlab设定x坐标轴的名称
   p2 = p2 + xlab(NULL) + ylab(NULL)
 }
-
 ######################################################################
 ######################################################################
 # 例1：bar图的第一个例子---画GOBP的富集分析
