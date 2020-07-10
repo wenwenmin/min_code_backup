@@ -23,6 +23,32 @@ get_modularity_bar_fig = function(modularity_dat){
   return(fig)
 }
 
+getEnrichmentBar = function(df,mycolor="green"){
+  ###可预先设定因子(展示在X的上的名称)的排序，否则它会按照字母排序
+  ###一般R语言会默认安装字母排序展示在图中，而有时候不是我们想要的
+  df$method <- factor(df$method, levels = c(as.character(df$method[1]),as.character(df$method[2])))
+  # 画一个柱状图，其中参数width=0.6调整柱子粗细，fill=mycolor设定填充的颜色
+  p2 = ggplot(data=df, mapping=aes(x=method, y=rat)) + geom_bar(stat="identity",width=0.6,fill=mycolor)
+  # expand=c(0,0)使得图和x轴的距离gap为零
+  p2 = p2 + theme_classic() + scale_y_continuous(expand = c(0,0))+
+    # X,Y轴 以及轴上的小点线的粗细设置
+    theme(axis.line=element_line(size=rel(2)))+theme(axis.ticks=element_line(size=rel(2))) + 
+    # X,Y轴刻度文字格式设置
+    theme(axis.text = element_text(colour = "black",size=rel(1.2)))
+  # theme(axis.title = element_text(size = rel(1.3)))
+  # 为画柱状图的比较p-value值做准备
+  ymax0 = max(df$rat)
+  # coord_cartesian坐标轴范围的设定
+  p2 = p2 + coord_cartesian(ylim = c(0,ymax0*1.1))
+  p2 = p2 + annotate("rect", xmin = 1, xmax = 2, ymin = ymax0*1.1, ymax =ymax0*1.1, alpha=.10,colour = "black",size=rel(1.2))+
+    annotate("rect", xmin = 1, xmax = 1, ymin = min(df$rat)+ymax0*0.02, ymax =ymax0*1.1, alpha=.10, colour = "black",size=rel(1.2))+
+    annotate("rect", xmin = 2, xmax = 2, ymin = ymax0*1.02, ymax =ymax0*1.1, alpha=.10, colour = "black",size=rel(1.2))
+  # 在图上添加文字说明
+  # + geom_text(x=1.5, y=560, size=rel(6), label="p<0.001")
+  # xlab设定x坐标轴的名称
+  p2 = p2 + xlab(NULL) + ylab(NULL)
+}
+
 ######################################################################
 ######################################################################
 # 例1：bar图的第一个例子---画GOBP的富集分析
