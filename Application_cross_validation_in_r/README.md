@@ -26,7 +26,8 @@ rgcv: Cross validation, n-fold for random forest in ranger (RG)
 The caret Package
 在caret这个包中，包含非常多的模型，大约有200个模型用于分类和回归
 The aim of the caret package (acronym of classification and regression training) is to provide a very general and efficient suite of commands for building and assessing predictive models. It allows to compare the predictive accuracy of a multitude of models (currently more than 200), including the most recent ones from machine learning. The comparison of different models can be done using cross-validation as well as with other approaches. The package also provides many options for data pre-processing.
-
+http://topepo.github.io/caret/available-models.html 该网页展示caret可以嵌套进去的所有包。。。。
+car
 https://github.com/gastonstat/CreditScoring
 这里例子分析的也非常精彩
 
