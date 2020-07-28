@@ -43,7 +43,24 @@ p1 = ggplot(dat, aes(x=para_c, y=no_zero_num)) +
   geom_point(shape = 1, size = 1.5) +
   labs(title = "L1L2_Proj", x = "c0 ", y = "number of nozero") + mytheme
 **********************************************************************
+# 2 ggplot2画线箱图，非常好看
+dat <- stack(as.data.frame(cv_tmp))
+dat$ind = factor(dat$ind, levels=row.names(ResMat))
+fig2 = ggplot(dat, aes(x=ind, y=values, color=ind)) +
+  geom_boxplot(size=1.2) +
+  theme(axis.line=element_line(size=rel(2)),
+        axis.ticks=element_line(size=rel(2)),
+        axis.title = element_text(size = rel(1.3)),
+        axis.text = element_text(colour = "black",size=rel(1.2)),
+        axis.text.x = element_text(angle = 30, hjust = 1),
+        legend.position = "none",
+        legend.title =element_text(size=1, colour="white"),
+        legend.text=element_text(size=rel(1.3), colour="black")) +
+  labs(title = NULL, x = "mtry: number of variables at each split", y = "AUC")
+fig2
+ggsave("Fig_8.png", width = 8, height = 8, units = "in")
 
+**********************************************************************
 
 ######################################################################
 ######################################################################
