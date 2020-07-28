@@ -17,3 +17,8 @@ Arguments:
 - mtry: Number of candidates draw to feed the algorithm. By default, it is the square of the number of columns.
 - maxnodes: Set the maximum amount of terminal nodes in the forest
 - importance=TRUE: Whether independent variables importance in the random forest be assessed
+
+## 直接通过包完成
+rgcv: Cross validation, n-fold for random forest in ranger (RG)
+
+## 能否写成一个一般的模式
