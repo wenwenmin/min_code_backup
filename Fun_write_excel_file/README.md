@@ -1,8 +1,9 @@
-# 参考网站 https://www.jianshu.com/p/78ada01a3b65
-# 就是一对三个在键盘上的esc键下的那个键
+task5_write_excel_file
+参考网站 https://www.jianshu.com/p/78ada01a3b65
+就是一对三个在键盘上的esc键下的那个键
 
 # 案例 1 
-## 注释符号-就是一对三个在键盘上的esc键下的那个键
+注释符号-就是一对三个在键盘上的esc键下的那个键
 ```
 library(openxlsx)
 write.xlsx(iris, file = "writeXLSX3.xlsx", colNames = TRUE, sheetName ="AAA")
