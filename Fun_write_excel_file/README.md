@@ -1,3 +1,8 @@
+# 参考网站 https://www.jianshu.com/p/78ada01a3b65
+# 就是一对三个在键盘上的esc键下的那个键
+
+# 案例 1 
+## 注释符号-就是一对三个在键盘上的esc键下的那个键
 ```
 library(openxlsx)
 write.xlsx(iris, file = "writeXLSX3.xlsx", colNames = TRUE, sheetName ="AAA")
@@ -31,9 +36,9 @@ saveWorkbook(OUT,of)
 end_time <- Sys.time()
 end_time-start_time
 ``` 
-###############################################################################
-###############################################################################
-# 参考网站 https://www.jianshu.com/p/78ada01a3b65
+
+# 案例 2
+```
 library(openxlsx) 
 write.xlsx(iris, file = "writeXLSX3.xlsx", colNames = TRUE, sheetName ="AAA")
 
@@ -91,3 +96,4 @@ Map(function(data, name){
 
 ##Save workbook to working directory
 saveWorkbook(wb, file = "example.xlsx", overwrite = TRUE)
+```
