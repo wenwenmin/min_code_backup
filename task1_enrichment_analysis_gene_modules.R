@@ -122,7 +122,7 @@ GeneModules.EnrichmentAnalysis = function(modules_information,known_functional_s
 ############################################################################
 print("Enrichment analysis of gene modules")
 setwd("C:/Users/闵老师/Desktop/TCGA/Result_EnrichmentAnalysis/")
-load("InputData_EnrichmentAnalysis.RData")
+load("task1_InputData_EnrichmentAnalysis.RData")
 # known_functional_sets = list(KEGG.PathwayGeneSets=KEGG.PathwayGeneSets,
 #                              GOBP.PathwayGeneSets=GOBP.PathwayGeneSets,
 #                              reactome.PathwayGeneSets=reactome.PathwayGeneSets)
