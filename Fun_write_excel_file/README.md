@@ -1,3 +1,4 @@
+'''
 library(openxlsx)
 write.xlsx(iris, file = "writeXLSX3.xlsx", colNames = TRUE, sheetName ="AAA")
 
@@ -29,7 +30,7 @@ for(aaa in 1:20)
 saveWorkbook(OUT,of)
 end_time <- Sys.time()
 end_time-start_time
-
+'''
 ###############################################################################
 ###############################################################################
 # 参考网站 https://www.jianshu.com/p/78ada01a3b65
