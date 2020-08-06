@@ -1,4 +1,4 @@
-# KEGG term中基因与被考虑的基因取交集
+# KEGG term涓熀鍥犱笌琚�冭檻鐨勫熀鍥犲彇浜ら泦
 terms.preprocessing = function(PathwayGeneSets,genes.entrezId){
   termNum = length(PathwayGeneSets)
   index = rep(TRUE,termNum)
@@ -121,7 +121,7 @@ GeneModules.EnrichmentAnalysis = function(modules_information,known_functional_s
 
 ############################################################################
 print("Enrichment analysis of gene modules")
-setwd("C:/Users/闵老师/Desktop/TCGA/Result_EnrichmentAnalysis/")
+setwd("C:/Users/闂佃�佸笀/Desktop/TCGA/Result_EnrichmentAnalysis/")
 load("InputData_EnrichmentAnalysis.RData")
 # known_functional_sets = list(KEGG.PathwayGeneSets=KEGG.PathwayGeneSets,
 #                              GOBP.PathwayGeneSets=GOBP.PathwayGeneSets,
