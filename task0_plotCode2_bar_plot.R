@@ -5,7 +5,7 @@ lapply(packages, library, character.only = TRUE)
 library(ggpubr)
 ######################################################################
 ######################################################################
-#µÃµ½ÎÒÃÇÒª´¦ÀíµÄÊı¾İ
+#å¾—åˆ°æˆ‘ä»¬è¦å¤„ç†çš„æ•°æ®
 head(gapminder)
 # create vectors with country names and years
 country_list <- c("Bolivia", "China", "Ethiopia", "Guatemala", "Haiti", "India", "Kenya", "Pakistan", "Sri Lanka", "Tanzania", "Uganda")
@@ -17,28 +17,28 @@ data_graph <- data_graph %>% mutate(year = factor(year))
 head(data_graph)
 ######################################################################
 ######################################################################
-# Àı1£ºbarÍ¼µÄµÚÒ»¸öÀı×Ó---»­GOBPµÄ¸»¼¯·ÖÎö
+# ä¾‹1ï¼šbarå›¾çš„ç¬¬ä¸€ä¸ªä¾‹å­---ç”»GOBPçš„å¯Œé›†åˆ†æ
 # make the base plot and save it in the object "p1"
 p1 = ggplot(data=data_graph, mapping=aes(x=country, y=lifeExp, fill="red"))
-# width=0.7µ÷Õûbar¿í¶È
+# width=0.7è°ƒæ•´barå®½åº¦
 p1 = p1 + geom_bar(stat="identity",width=0.7) + theme_classic()
-#È¥³ıÍ¼ºÍ×ø±êµÄ¿ÕĞé
+#å»é™¤å›¾å’Œåæ ‡çš„ç©ºè™š
 p1 = p1 + scale_y_continuous(expand = c(0, 0))
-# xºÍyÖá¶Ôµ÷
+# xå’Œyè½´å¯¹è°ƒ
 p1 = p1 + coord_flip()
 p1 = p1 + theme(axis.text = element_text(colour = "red", size = rel(1.5)))+
   theme(axis.title.x = element_text(size = rel(2))) + 
   theme(axis.title.y = element_text(size = rel(2))) +
-  # XºÍYÖáµÄÏßÉèÖÃ
+  # Xå’ŒYè½´çš„çº¿è®¾ç½®
   theme(axis.line  = element_line(size = rel(2),colour = "red")) +
-  # ×ø±êÖáÉÏµÄĞ¡ÏßÉèÖÃ
+  # åæ ‡è½´ä¸Šçš„å°çº¿è®¾ç½®
   theme(axis.ticks = element_line(size = 2,colour = "blue"))+
   theme(legend.position = "none")
 ######################################################################
 ######################################################################
-# Àı2£ºÄ£¿éÖĞPPI±ßÓëËæ»úÄ£¿éµÄPPI±È½ÏBarÍ¼
+# ä¾‹2ï¼šæ¨¡å—ä¸­PPIè¾¹ä¸éšæœºæ¨¡å—çš„PPIæ¯”è¾ƒBarå›¾
 df = data.frame(dose=c("Random", "Gene set"),len=c(100, 500))
-# ×Ô¼ºÉè¶¨Ò»¸öÒò×ÓµÄÅÅĞò£¬·ñÔòËü»á°´ÕÕ×ÖÄ¸ÅÅĞò
+# è‡ªå·±è®¾å®šä¸€ä¸ªå› å­çš„æ’åºï¼Œå¦åˆ™å®ƒä¼šæŒ‰ç…§å­—æ¯æ’åº
 df$dose <- factor(df$dose, levels = c("Random","Gene set"))
 p2 = ggplot(data=df, aes(x=dose, y=len)) + geom_bar(stat="identity", fill="blue")
 p2 = p2 + theme_classic() + scale_y_continuous(expand = c(0, 0))
@@ -53,7 +53,7 @@ p2 = p2 +  coord_cartesian(ylim = c(0,600)) + geom_text(x=1.5, y=560, size=rel(6
 p2
 ######################################################################
 ######################################################################
-# Àı3£ºÄ£¿éµÄmodularityºÍËæ»úÄ£¿éµÄ¶Ô±ÈbarÍ¼
+# ä¾‹3ï¼šæ¨¡å—çš„modularityå’Œéšæœºæ¨¡å—çš„å¯¹æ¯”barå›¾
 p3 = ggplot(data=data_graph, mapping=aes(x=country, y=lifeExp))
 p3 = p3 + geom_bar(stat = "identity", aes(fill = year),position = "dodge") 
 p3 = p3 + scale_fill_manual(values = c("blue", "red"))
