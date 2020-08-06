@@ -1,8 +1,9 @@
 # 摘要
+<font color="green"> 
 在这个文件夹
 （1）把自己平时积累的代码汇总在此，以便于未来使用。
 （2）对于机器学习和生物统计的一些认识也会总结在此
-
+</font>
 ## 一、GitHub的几个常见问题
 1 如何创建一个数据库？
 选中Initialize this repository with a README，这样会生存一个空的README，之后可以添加自己的文件
