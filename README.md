@@ -37,26 +37,17 @@ Enrichment-analysis-of-gene-modules-with-using-R
 3: Heatmap 画热图
 
 ## install all packages necessary to replicate the example
+``` r 
 pkgs <- c("c060", "xtable", "glmnet", "peperr", "penalizedSVM", "pamr")
-
 for (pkg in pkgs) {
-
     if (!require(pkg, character.only = TRUE, quietly = TRUE))
-    
-        install.packages(pkg)
-        
+        install.packages(pkg)  
 }
 pkgsBioc <- c("Biobase", "limma", "genefilter", "GEOquery")
-
 for (pkg in pkgsBioc) {
-
     if (!require(pkg, character.only = TRUE, quietly = TRUE)) {
-    
         source("http://bioconductor.org/biocLite.R")
-        
-        biocLite(pkg)
-        
+        biocLite(pkg) 
     }
-    
 }
-
+``` 
