@@ -22,11 +22,11 @@ https://github.com/wenwenmin/LibADMM/edit/master/README.md
 
 ##  二、生物分析的小工具
 0: R 导入excel数据表
-'' R
+``` r 
 library(readxl)   
 rt <- read_excel("sample_data.xlsx",sheet = 1)  
 head(rt) 
-''
+```
 
 1: 富集分析
 可以自动对多个基因集合做富集分析
